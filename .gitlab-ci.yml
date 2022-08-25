@@ -15,5 +15,4 @@ run testscript:
   stage: run testscript
   script:
     # run Cypress tests
-    - npx cypress run --record --key 84398296-b2b5-4882-bd9a-82b2a0cf1f28 --env allure=true
-    - npm run report:allure
+    - npx cypress run --record --key 84398296-b2b5-4882-bd9a-82b2a0cf1f28
