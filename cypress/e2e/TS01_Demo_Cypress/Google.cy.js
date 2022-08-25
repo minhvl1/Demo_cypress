@@ -12,11 +12,11 @@ describe('google',()=>{
         cy.url().should('contains','https://www.google.com.vn/search?q=minh&')
     })
 
-    it('DEMO_02 Search on Yahoo',() => {
-        cy.visit('https://vn.yahoo.com/')
-        cy.xpath("//input[@class='_yb_1w9gc']")
+    it('DEMO_02 Search on Bing',() => {
+        cy.visit('https://www.bing.com/')
+        cy.xpath("//input[@class='sb_form_q']")
             .type('minh')
             .type('{enter}')
-        cy.url().should('contains','https://vn.search.yahoo.com/search?p=minh&')
+        cy.url().should('contains','https://www.bing.com/search?q=minh&')
     })
 })
