@@ -9,4 +9,4 @@ test:
     - npm ci
     # start the server in the background
     - - npm install cypress --save-dev
-    - npx cypress run --record --key 84398296-b2b5-4882-bd9a-82b2a0cf1f28
+    - npx cypress run
