@@ -19,3 +19,12 @@ import './commands'
 require('cypress-xpath')
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+var Xvfb = require('xvfb');
+var options = {}; // optional
+var xvfb = new Xvfb(options);
+xvfb.start(function(err, xvfbProcess) {
+    // code that uses the virtual frame buffer here
+    xvfb.stop(function(err) {
+        // the Xvfb is stopped
+    });
+});
