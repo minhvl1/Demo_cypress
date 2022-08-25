@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"failed","Thu Aug 25 17:15:24 ICT 2022","Thu Aug 25 17:15:30 ICT 2022","6321","","google","","","","DEMO_02 Search fail on Google",""
+"passed","Thu Aug 25 17:15:22 ICT 2022","Thu Aug 25 17:15:24 ICT 2022","2321","","google","","","","DEMO_01.1 Search success on Google",""
+"passed","Thu Aug 25 17:15:15 ICT 2022","Thu Aug 25 17:15:22 ICT 2022","6109","","google","","","","DEMO_01 Search success on Google",""
