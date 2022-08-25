@@ -9,7 +9,9 @@ describe('google',()=>{
         cy.xpath("//input[@class='gLFyf gsfi']")
             .type('minh')
             .type('{enter}')
+        cy.wait(5000)
         cy.url().should('contains','https://www.google.com.vn/search?q=minh&')
+        
     })
 
     it('DEMO_02 Search on Bing',() => {
@@ -17,6 +19,7 @@ describe('google',()=>{
         cy.xpath("//input[@class='sb_form_q']")
             .type('minh')
             .type('{enter}')
+        cy.wait(5000)
         cy.url().should('contains','https://www.bing.com/search?q=minh&')
     })
 })
