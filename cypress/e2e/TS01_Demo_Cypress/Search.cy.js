@@ -1,4 +1,7 @@
+import GoogleHomePage from "../../support/interface/google/HomePage";
+
 describe('Google',()=>{
+    const googleHomePage = new GoogleHomePage ()
     beforeEach(() =>{
     })
 
@@ -6,7 +9,7 @@ describe('Google',()=>{
     })
     it('DEMO_01 Search success on Google',() => {
         cy.visit('https://www.google.com.vn/?hl=vi')
-        cy.xpath("//input[@name='q']")
+        googleHomePage.getGoogleSearchTextbox()
             .type('minh')
             .type('{enter}')
         cy.wait(3000)

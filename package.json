@@ -4,7 +4,7 @@
   "description": "demo cypress",
   "main": "index.js",
   "scripts": {
-    "test": "npm run clean:reports && npx cypress run && report:allure",
+    "test": "npm run clean:reports && npx cypress run --env allure=true && report:allure",
     "clean:reports": "rmdir /s/q allure-results",
     "report:allure": "allure generate allure-results --clean -o allure-report && allure open allure-report"
   },
