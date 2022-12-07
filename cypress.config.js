@@ -8,5 +8,6 @@ module.exports = defineConfig({
       return config;
     },
   },
-  projectId: "z1y85u"
+  projectId: "z1y85u",
+  includeShadowDom: true,
 });

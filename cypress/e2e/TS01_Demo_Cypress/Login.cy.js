@@ -18,7 +18,7 @@ describe('Login',()=>{
         curaHomePage.getSuccessLoginMessage().should('be.visible')
     })
 
-    it('DEMO_02 Login fail',() => {
+    it.skip('DEMO_02 Login fail',() => {
         cy.visit('https://katalon-demo-cura.herokuapp.com/profile.php#login')
         curaHomePage.getUsername().type('John Doe')
         curaHomePage.getPassword().type('ThisIsPassword')
