@@ -1,5 +1,5 @@
-import GoogleHomePage from "../google/HomePage";
-import Commons from "./Commons";
+import GoogleHomePage from "../../interface/google/HomePage";
+import Commons from "../Commons";
 
 const googleHomePage = new GoogleHomePage()
 const commons = new Commons()

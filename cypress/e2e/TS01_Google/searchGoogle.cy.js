@@ -1,5 +1,5 @@
-import HomePageGoogle from "../../support/interface/pageObject/HomePageGoogle";
-import ResultPageGoogle from "../../support/interface/pageObject/ResultPageGoogle";
+import HomePageGoogle from "../../support/pageObject/google/HomePageGoogle";
+import ResultPageGoogle from "../../support/pageObject/google/ResultPageGoogle";
 describe("Google",()=>{
     const homePageGoogle = new HomePageGoogle()
     const resultPageGoogle = new ResultPageGoogle()
