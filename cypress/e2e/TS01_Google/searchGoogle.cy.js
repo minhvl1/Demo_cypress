@@ -1,14 +1,16 @@
+import HomePageGoogle from "../../support/interface/pageObject/HomePageGoogle";
+import ResultPageGoogle from "../../support/interface/pageObject/ResultPageGoogle";
 describe("Google",()=>{
+    const homePageGoogle = new HomePageGoogle()
+    const resultPageGoogle = new ResultPageGoogle()
 
     beforeEach("",()=>{
         cy.visit(Cypress.env('googleBaseUrl'))
     })
 
     it("Search CMC in google",()=>{
-        cy.xpath("//input[@name='q']")
-            .should("be.empty")
-            .type("CMC{enter}")
-        cy.xpath("//div[@id='search']")
-            .should("contain","CMC")
+        homePageGoogle.inputCMCtoGoogle()
+        homePageGoogle.sendKeyEnterGoogleSearch()
+        resultPageGoogle.verifyPageResultContainsCMC()
     })
 })
