@@ -1,4 +1,4 @@
-describe("Practice Form",()=>{
+describe("Practice Form",{defaultCommandTimeout:5000},()=>{
 
     beforeEach("",()=>{
         cy.viewport(1920,1080)
@@ -17,15 +17,12 @@ describe("Practice Form",()=>{
             .clear()
             .should("be.empty")
             .type("vu")
-        cy.wait(1000)
         cy.xpath("//label[@for='gender-radio-3']").click()
 
         cy.xpath("//input[@id='userNumber']")
             .clear()
             .should("be.empty")
             .type("123123123123")
-
-        cy.wait(1000)
 
         cy.xpath("//div[@class=' css-yk16xz-control']").type("NCR{enter}")
         cy.xpath("(//div[@class=' css-1hwfws3'])[2]").type("Delhi{enter}")
