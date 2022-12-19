@@ -1,4 +1,4 @@
-describe("Practice Form",{defaultCommandTimeout:5000},()=>{
+describe("Practice Form",{defaultCommandTimeout:15000},()=>{
 
     beforeEach("",()=>{
         cy.viewport(1920,1080)
@@ -22,7 +22,7 @@ describe("Practice Form",{defaultCommandTimeout:5000},()=>{
         cy.xpath("//input[@id='userNumber']")
             .clear()
             .should("be.empty")
-            .type("123123123123")
+            .type("1231231231")
 
         cy.xpath("//div[@class=' css-yk16xz-control']").type("NCR{enter}")
         cy.xpath("(//div[@class=' css-1hwfws3'])[2]").type("Delhi{enter}")
@@ -31,6 +31,24 @@ describe("Practice Form",{defaultCommandTimeout:5000},()=>{
 
         cy.xpath("//div[contains(text(),'Thanks for submitting the form')]")
             .should("be.visible")
+
+        cy.xpath("//td[text()='Student Name']/following-sibling::td")
+            .invoke('text')
+            .then((text) => {
+                assert.equal(text,"minh vu","equal input name")
+      })
+
+        cy.xpath("//td[text()='Mobile']/following-sibling::td")
+            .invoke('text')
+            .then((text) => {
+                assert.equal(text,"1231231231","equal number")
+            })
+
+        cy.xpath("//td[text()='State and City']/following-sibling::td")
+            .invoke('text')
+            .then((text) => {
+                assert.equal(text,"NCR Delhi","equal country")
+            })
     })
 
     })
