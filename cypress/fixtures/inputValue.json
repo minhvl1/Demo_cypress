@@ -3,5 +3,9 @@
   "lastName": "vu",
   "phoneNumber":"1231231231",
   "state": "NCR",
-  "city": "Delhi"
+  "city": "Delhi",
+  "dayOfBirth": "21",
+  "monthOfBirth": "November",
+  "yearOfBirth": "1997",
+  "gender": "Other"
 }

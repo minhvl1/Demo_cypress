@@ -1,4 +1,8 @@
+import HomePageQa from "../../support/pageObject/demoQa/HomePageQa";
+import PracticeForm from "../../support/pageObject/demoQa/PracticeForm";
 describe("Practice Form",{defaultCommandTimeout:15000},()=>{
+    const homePageQa = new HomePageQa()
+    const practiceForm = new PracticeForm()
     const inputValue = require("../../fixtures/inputValue.json")
     beforeEach("",()=>{
         cy.viewport(1920,1080)
@@ -7,28 +11,24 @@ describe("Practice Form",{defaultCommandTimeout:15000},()=>{
 
     it("Submit practice form",()=>{
 
-        cy.xpath("//div[@class='card mt-4 top-card'][2]").click()
-        cy.xpath("//div[@class='element-list collapse show']").click()
+        homePageQa.goToPracticePage()
+        practiceForm.getPracticeForm()
+        practiceForm.inputFirstName()
+        practiceForm.inputLastName()
+        practiceForm.selectGender()
+        practiceForm.inputUserNumber()
 
-        cy.xpath("//input[@id='firstName']")
-            .clear()
-            .should("be.empty")
-            .type(inputValue.firstName)
-        cy.xpath("//input[@id='lastName']")
-            .clear()
-            .should("be.empty")
-            .type(inputValue.lastName)
-        cy.xpath("//label[@for='gender-radio-3']").click()
+        practiceForm.clickDateOfBirthTextbox()
+        practiceForm.selectYearOfBirth()
+        practiceForm.selectMonthOfBirth()
+        practiceForm.selectDayOfBirth()
 
-        cy.xpath("//input[@id='userNumber']")
-            .clear()
-            .should("be.empty")
-            .type(inputValue.phoneNumber)
+        practiceForm.selectState()
+        practiceForm.selectCity()
 
-        cy.xpath("//div[@class=' css-yk16xz-control']").type(inputValue.state+"{enter}")
-        cy.xpath("(//div[@class=' css-1hwfws3'])[2]").type(inputValue.city+"{enter}")
+        practiceForm.clickSubmitButton()
 
-        cy.xpath("//button[@id='submit']").click()
+
 
         cy.xpath("//div[contains(text(),'Thanks for submitting the form')]")
             .should("be.visible")
