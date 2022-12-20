@@ -5,11 +5,7 @@ const googleHomePage = new GoogleHomePage()
 const commons = new Commons()
 class HomePageGoogle {
     inputCMCtoGoogle(){
-        return commons.sendkeyToElement("CMC",googleHomePage.getGoogleSearchTextbox())
+        return commons.sendkeyToElement("CMC{enter}",googleHomePage.getGoogleSearchTextbox())
             }
-
-    sendKeyEnterGoogleSearch(){
-        return commons.sendkeyToElement("{enter}",googleHomePage.getGoogleSearchTextbox())
-    }
 }
 export default HomePageGoogle

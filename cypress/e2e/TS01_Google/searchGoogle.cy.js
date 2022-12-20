@@ -10,7 +10,6 @@ describe("Google",()=>{
 
     it("Search CMC in google",()=>{
         homePageGoogle.inputCMCtoGoogle()
-        homePageGoogle.sendKeyEnterGoogleSearch()
         resultPageGoogle.verifyPageResultContainsCMC()
     })
 })
