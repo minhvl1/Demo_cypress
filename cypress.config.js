@@ -8,5 +8,6 @@ module.exports = defineConfig({
       return config;
     },
   },
+  defaultCommandTimeout: 10000,
   projectId: "z1y85u"
 });
