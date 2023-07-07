@@ -1,6 +1,6 @@
 class GoogleHomePage{
     getGoogleSearchTextbox(){
-        return cy.xpath("//input[@name='q']")
+        return cy.xpath("//textarea[@class='gLFyf']")
     }
 
     getGoogleResult(){
