@@ -17,6 +17,7 @@ jobs:
         run: npx cypress run --spec 'cypress/e2e/TS03_DemoQA/practiceForm.cy.js'
         
   report:
+    needs: [test]
     runs-on: ubuntu-latest
     steps:
       - name: Get code
