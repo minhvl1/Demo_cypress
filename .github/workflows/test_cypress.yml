@@ -16,16 +16,18 @@ jobs:
       - name: Run tests
         run: npx cypress run --spec 'cypress/e2e/TS03_DemoQA/practiceForm.cy.js'
       
-  report:
+  deploy-report:
     needs: test
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      actions: write
     steps:
-      - name: Test local action
-        uses: ./allure-report-action
-        if: always()
-        id: allure-report
+      - name: Deploy Reports to GitHub pages with History and Retries
+        uses: cybersokari/allure-deployer-action@v1.8.0
         with:
-          allure_results: build/allure-results
-          gh_pages: gh-pages
-          allure_report: allure-report
-          allure_history: allure-history
+          target: 'github'
+          github_pages_branch: 'gh-pages'
+          allure_results_path: 'allure-results'
+          show_history: 'true'
+          retries: 1
