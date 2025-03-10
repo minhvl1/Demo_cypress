@@ -19,15 +19,6 @@ jobs:
   deploy-report:
     needs: test
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      actions: write
     steps:
       - name: Deploy Reports to GitHub pages with History and Retries
-        uses: cybersokari/allure-deployer-action@v1.8.0
-        with:
-          target: 'github'
-          github_pages_branch: 'gh-pages'
-          allure_results_path: 'allure-results'
-          show_history: 'true'
-          retries: 1
+        run: "Implement later...."
