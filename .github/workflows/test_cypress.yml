@@ -28,7 +28,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Install allure
-        uses: andgineer/allure-report@v3.5
+        uses: cybersokari/allure-deployer-action@v1.8.0
       - name: Generate Report
         run: allure generate 
         
