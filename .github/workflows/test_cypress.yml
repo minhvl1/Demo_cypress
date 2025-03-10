@@ -1,4 +1,4 @@
-name: Test Project
+oname: Test Project
 on: [push, workflow_dispatch]
 jobs:
 
@@ -21,4 +21,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy Reports
-        run: "Implement later...."
+        run: echo "Implement later...."
