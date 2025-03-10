@@ -29,7 +29,11 @@ jobs:
         run: npm ci
       - name: Install allure
         uses: cybersokari/allure-deployer-action@v1.8.0
-      - name: Generate Report
-        run: allure generate 
+        with:
+          target: 'github'
+          github_pages_branch: 'gh-pages'
+          allure_results_path: 'allure-results'
+          show_history: 'true'
+          retries: 5
         
         
